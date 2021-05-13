@@ -1,0 +1,27 @@
+<%= stylesheet_pack_tag 'index' %>
+
+<div class="">
+</div>
+<!-- Portfolio Section-->
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row">
+				<div class="row mb-4">
+				<div class="col float-right mb-4">
+					<%= link_to bulk_products_path do %>
+						<button type="button" class="float-right btn btn-warning">Bulk Products</button>
+					<% end %>
+					<%= link_to new_product_path do %>
+						<button type="button" class="float-right btn btn-success">Create</button>
+					<% end %>
+				</div>
+				<div class="row">
+					<% @products.map do |product| %>
+						<%= render 'product', product: product %>
+					<% end %>
+				</div>
+            </div>
+        </div>
+    </div>
+</section>
